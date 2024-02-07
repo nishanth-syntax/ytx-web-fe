@@ -1,24 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react'
+import 'semantic-ui-css/semantic.min.css'
+import Sheet from 'react-modal-sheet';
+import { Container } from "semantic-ui-react";
+import LandingPage from './components/Landing';
+import LandingPageContext from './components/Contexts/LandingPageContext';
+import SideBar from './components/SideBar';
 
 function App() {
+  const { showLandingSheet, setLandingVisible } = React.useContext(LandingPageContext);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{ margin: 20, display: 'flex', flex: 1, alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', height: '100%' }}>
+      <SideBar />
+      <LandingPage />
+      <Sheet isOpen={showLandingSheet} onClose={() => setLandingVisible(false)}>
+        <Sheet.Container>
+          <Sheet.Header />
+          <Sheet.Content><LandingPage /></Sheet.Content>
+        </Sheet.Container>
+        <Sheet.Backdrop />
+      </Sheet>
+    </Container>
   );
 }
 
