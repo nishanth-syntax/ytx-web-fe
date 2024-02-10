@@ -7,15 +7,14 @@ import {
 import sampleDataArray from '../../data/sampleData.json';
 import LandingCard from '../LandingCard';
 import LandingPageContext from '../Contexts/LandingPageContext';
-import MainHeader from '../MainHeader';
 
 const LandingPage = () => {
     const { setSelectedData, setLandingVisible } = React.useContext(LandingPageContext);
     return (
-        <Container style={{ margin: 20, display: 'flex', flex: 1, alignItems: 'flex-start', alignContent: 'flex-start', justifyContent: 'center', flexDirection: 'column' }}>
-            <MainHeader />
+        <Container style={{ margin: 20, display: 'flex', flex: 1, alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>            
             {sampleDataArray.map((landingPageData, index) => (
                 <Card
+                    style={{width: '100%'}}
                     key={`main-id-${index}`}
                     onClick={() => {
                         console.warn(`CLICK!`)
