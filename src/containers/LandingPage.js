@@ -2,7 +2,7 @@ import React from 'react'
 import {
     Card,
     Container,
-    CardContent,
+    CardHeader,
     Image,
     List,
 } from 'semantic-ui-react'
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom';
 
 import sampleDataArray from '../data/sampleData.json';
 import LandingCard from '../components/LandingComponent/LandingCard';
-import { PAGE_POOL, STYLE_MAIN_CONTAINER } from '../constants';
+import { APP_COLOR_SELECTED, LABEL_COLOR_MAIN, PAGE_POOL, STYLE_MAIN_CONTAINER } from '../constants';
 import { HeaderLabel } from '../components/LandingComponent/MainHeader/HeaderLabel';
 
 const LandingPage = () => {
@@ -25,20 +25,19 @@ const LandingPage = () => {
     }
 
     return (
-        <Container>
+        <Container style={{ margin: 20 }}>
             <List horizontal style={{
                 display: 'flex',
                 flex: 1,
                 height: '15vh',
-                overflowX: 'scroll'
+                overflowX: 'scroll',
             }}>
                 {sampleDataArray.map((landingPageData, index) => (
                     <Container style={{
                         flex: 1,
                         verticalAlign: 'middle',
                         width: '50%',
-                        padding: 5,
-                        margin: 5
+                        padding: 3
                     }}>
                         <Card
                             style={{ width: '120px' }}
@@ -52,14 +51,24 @@ const LandingPage = () => {
                     </Container>
                 ))}
             </List>
-            <List horizontal style={{ width: '100%', height: '70vh', overflowY: 'scroll' }}>
+            <List horizontal style={{
+                width: '100%',
+                height: '70vh',
+                overflowY: 'scroll'
+            }}>
                 {sampleDataArray.map((landingPageData, index) => (
                     <Card
-                        style={{ width: '100%' }}
+                        style={{
+                            width: '100%',
+                            background: APP_COLOR_SELECTED
+                        }}
                         key={`main-id-${index}`}
                         onClick={handleClick}
                     >
                         <Image key={`image-id-${index}`} src={landingPageData.imageURL} wrapped ui={false} />
+                        <CardHeader style={{ height: 60, background: LABEL_COLOR_MAIN, marginBottom: 10 }}>
+                            Matthew
+                        </CardHeader>
                     </Card>
                 ))}
             </List>

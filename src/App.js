@@ -20,8 +20,7 @@ import { PAGE_LANDING, PAGE_POOL, STYLE_GRID, STYLE_GRID_COL, STYLE_GRID_ROW, ST
 
 function App() {
   return (
-    <Container style={STYLE_MAIN_CONTAINER}>
-      <MainHeader />
+    <Container style={STYLE_MAIN_CONTAINER}>      
       <Router>
         <Routes>
           <Route exact path="/" element={<AppComponents />} />
@@ -29,6 +28,7 @@ function App() {
           {/* <Route path={PAGE_POOL} element={<PoolPage />} /> */}
         </Routes>
       </Router>
+      {/* <MainHeader /> */}
     </Container>
   );
 }

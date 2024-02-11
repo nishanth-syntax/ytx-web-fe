@@ -8,11 +8,11 @@ export const LABEL_SIZE_BIG = 'big';
 export const LABEL_SIZE_HUGE = 'huge';
 
 
-export const LABEL_COLOR_MAIN = '#000000';
+export const LABEL_COLOR_MAIN = '#ccc000';
 //| 'mini'| 'tiny'| 'small'| 'medium'| 'large'| 'big'| 'huge'| 'massive'
 
 export const APP_NAME = "YTX";
-export const APP_COLOR_SELECTED = "#ccc000"
+export const APP_COLOR_SELECTED = "#fff"
 
 export const PAGE_TEXT_SEARCH = 'SELECT';
 export const STYLE_MAIN_CONTAINER = {
