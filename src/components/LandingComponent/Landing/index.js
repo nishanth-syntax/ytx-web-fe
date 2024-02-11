@@ -4,31 +4,38 @@ import {
     Container,
     Image,
 } from 'semantic-ui-react'
-import sampleDataArray from '../../data/sampleData.json';
+import { useNavigate } from 'react-router-dom';
+
+import sampleDataArray from '../../../data/sampleData.json';
 import LandingCard from '../LandingCard';
 import LandingPageContext from '../Contexts/LandingPageContext';
 
 const LandingPage = () => {
-    const { setSelectedData, setLandingVisible } = React.useContext(LandingPageContext);
+    let navigate = useNavigate();
+    // const { setSelectedData, setLandingVisible } = React.useContext(LandingPageContext);
+
+    function handleClick() {
+        // console.warn(`CLICK!`)
+        // setSelectedData(sampleDataArray[index]);
+        // setLandingVisible(true);        
+        navigate("/home");
+    }
+
     return (
-        <Container style={{ margin: 20, display: 'flex', flex: 1, alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>            
+        <Container style={{ margin: 20, display: 'flex', flex: 1, alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>
             {sampleDataArray.map((landingPageData, index) => (
                 <Card
-                    style={{width: '100%'}}
+                    style={{ width: '100%' }}
                     key={`main-id-${index}`}
-                    onClick={() => {
-                        console.warn(`CLICK!`)
-                        setSelectedData(sampleDataArray[index]);
-                        setLandingVisible(true);
-                    }}
+                    onClick={handleClick}
                 >
                     <Image key={`image-id-${index}`} src={landingPageData.imageURL} wrapped ui={false} />
-                    <LandingCard                    
+                    <LandingCard
                         dataIndex={index}
                         mainHeader={landingPageData.mainHeader}
                         subHeader={landingPageData.subHeader}
                         description={landingPageData.description}
-                        bottomText={landingPageData.bottomText}                    
+                        bottomText={landingPageData.bottomText}
                     />
                 </Card>))}
         </Container>

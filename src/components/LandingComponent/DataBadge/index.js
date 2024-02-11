@@ -1,4 +1,3 @@
-import React from 'react'
 import { Icon, Label } from 'semantic-ui-react'
 
 const DataBadge = () => (

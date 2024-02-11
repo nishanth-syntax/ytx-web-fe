@@ -12,7 +12,7 @@ const SideBar = () => {
                     checked={showLandingSheet}
                     label={{ children: <code>showLandingSheet</code> }}
                     onChange={(e, data) => setLandingVisible(data.checked)}
-                />                
+                />
             </GridColumn>
         </Grid>
     )

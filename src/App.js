@@ -2,18 +2,42 @@ import './App.css';
 import React from 'react'
 import 'semantic-ui-css/semantic.min.css'
 import { Container } from "semantic-ui-react";
-import LandingPage from './components/Landing';
-import BottomSheet from './components/BottomSheet';
-import MainHeader from './components/MainHeader';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
+import LandingPage from './containers/LandingPage';
+import PoolPage from './containers/PoolPage';
+import BottomSheet from './components/LandingComponent/BottomSheet';
+import MainHeader from './components/LandingComponent/MainHeader';
+import { LandingPageProvider } from '../src/components/LandingComponent/Contexts/LandingPageContext';
+
+import { PAGE_LANDING, PAGE_POOL, STYLE_MAIN_CONTAINER } from './constants';
 //https://www.framer.com/motion/examples/
+
 function App() {
   return (
-    <Container style={{ margin: 20, display: 'flex', flex: 1, alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', height: '100%' }}>
+    <Container style={STYLE_MAIN_CONTAINER}>
       <MainHeader />
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<AppComponents />} />
+          <Route path={PAGE_LANDING} element={<AppComponents />} />
+          <Route path={PAGE_POOL} element={<PoolPage />} />
+        </Routes>
+      </Router>
+    </Container>
+  );
+}
+
+function AppComponents() {
+  return (
+    <LandingPageProvider>
       <LandingPage />
       <BottomSheet />
-    </Container>
+    </LandingPageProvider>
   );
 }
 
