@@ -1,19 +1,60 @@
 import {
-    Card,
+    Grid,
+    GridRow,
+    GridColumn,
     Container,
     Image,
 } from 'semantic-ui-react'
-import { useNavigate } from 'react-router-dom';
 
-import { STYLE_MAIN_CONTAINER } from '../constants';
-import LandingPage from './LandingPage';
+import { STYLE_GRID, STYLE_MAIN_CONTAINER } from '../constants';
+
+const SelectedGrid = () => {
+    return (
+        <Grid style={{margin: 5}} columns={3} divided>
+            <GridRow>
+                <GridColumn>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                </GridColumn>
+                <GridColumn>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                </GridColumn>
+                <GridColumn>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                </GridColumn>
+            </GridRow>
+
+            <GridRow>
+                <GridColumn>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                </GridColumn>
+                <GridColumn>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                </GridColumn>
+                <GridColumn>
+                    <Image src='https://react.semantic-ui.com/images/wireframe/media-paragraph.png' />
+                </GridColumn>
+            </GridRow>
+        </Grid>
+    )
+}
 
 const PoolPage = () => {
-    let navigate = useNavigate();
-
     return (
-        <Container style={{...STYLE_MAIN_CONTAINER, ...{backgroundColor: '#efefef'}}}>
-            <LandingPage />
+        <Container style={{ ...STYLE_MAIN_CONTAINER, ...{ backgroundColor: '#efefef' } }}>
+            <Grid style={{
+                ...STYLE_GRID, ...{
+                    position: 'relative',
+                    zIndex: -1,
+                    left: 0,
+                    right: 0,
+                    bottom: '20px',
+                    height: '100px',
+                    padding: 0,
+                    backgroundColor: '#ccc'
+                }
+            }} rows={3} divided>
+                
+            </Grid>
         </Container>
     )
 }

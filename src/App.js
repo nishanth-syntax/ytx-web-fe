@@ -7,6 +7,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import { GridRow, GridColumn, Grid, Image } from 'semantic-ui-react'
 
 import LandingPage from './containers/LandingPage';
 import PoolPage from './containers/PoolPage';
@@ -14,7 +15,7 @@ import BottomSheet from './components/LandingComponent/BottomSheet';
 import MainHeader from './components/LandingComponent/MainHeader';
 import { LandingPageProvider } from '../src/components/LandingComponent/Contexts/LandingPageContext';
 
-import { PAGE_LANDING, PAGE_POOL, STYLE_MAIN_CONTAINER } from './constants';
+import { PAGE_LANDING, PAGE_POOL, STYLE_GRID, STYLE_GRID_COL, STYLE_GRID_ROW, STYLE_MAIN_CONTAINER } from './constants';
 //https://www.framer.com/motion/examples/
 
 function App() {
@@ -24,8 +25,8 @@ function App() {
       <Router>
         <Routes>
           <Route exact path="/" element={<AppComponents />} />
-          <Route path={PAGE_LANDING} element={<AppComponents />} />
-          <Route path={PAGE_POOL} element={<PoolPage />} />
+          {/* <Route path={PAGE_LANDING} element={<AppComponents />} /> */}
+          {/* <Route path={PAGE_POOL} element={<PoolPage />} /> */}
         </Routes>
       </Router>
     </Container>
@@ -36,7 +37,7 @@ function AppComponents() {
   return (
     <LandingPageProvider>
       <LandingPage />
-      <BottomSheet />
+      {/* <BottomSheet /> */}
     </LandingPageProvider>
   );
 }
