@@ -9,7 +9,7 @@ const MainHeader = () => (
     display: 'flex',    
     alignItems: 'center',
     height: 30,
-    margin: 10,    
+    margin: 15,
   }}>
     <AppIcon />
     <HeaderLabel />

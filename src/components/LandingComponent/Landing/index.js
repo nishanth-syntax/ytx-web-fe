@@ -8,21 +8,16 @@ import { useNavigate } from 'react-router-dom';
 
 import sampleDataArray from '../../../data/sampleData.json';
 import LandingCard from '../LandingCard';
-import LandingPageContext from '../Contexts/LandingPageContext';
 
 const LandingPage = () => {
     let navigate = useNavigate();
-    // const { setSelectedData, setLandingVisible } = React.useContext(LandingPageContext);
-
-    function handleClick() {
-        // console.warn(`CLICK!`)
-        // setSelectedData(sampleDataArray[index]);
-        // setLandingVisible(true);        
+    
+    function handleClick() {           
         navigate("/home");
     }
 
     return (
-        <Container style={{ margin: 20, display: 'flex', flex: 1, alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>
+        <Container style={{ margin: 0, display: 'flex', flex: 1, alignItems: 'center', alignContent: 'center', justifyContent: 'center', flexDirection: 'column', width: '100%' }}>
             {sampleDataArray.map((landingPageData, index) => (
                 <Card
                     style={{ width: '100%' }}

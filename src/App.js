@@ -20,26 +20,29 @@ import { PAGE_LANDING, PAGE_POOL, STYLE_GRID, STYLE_GRID_COL, STYLE_GRID_ROW, ST
 
 function App() {
   return (
-    <Container style={STYLE_MAIN_CONTAINER}>      
-      <Router>
-        <Routes>
-          <Route exact path="/" element={<AppComponents />} />
-          {/* <Route path={PAGE_LANDING} element={<AppComponents />} /> */}
-          {/* <Route path={PAGE_POOL} element={<PoolPage />} /> */}
-        </Routes>
-      </Router>
-      {/* <MainHeader /> */}
-    </Container>
-  );
-}
-
-function AppComponents() {
-  return (
     <LandingPageProvider>
-      <LandingPage />
-      {/* <BottomSheet /> */}
+      <Container style={STYLE_MAIN_CONTAINER}>
+        <MainHeader />
+        <Router>
+          <Routes>
+            <Route exact path="/" element={<LandingPage />} />
+            <Route path={PAGE_LANDING} element={<LandingPage />} />
+            <Route path={PAGE_POOL} element={<PoolPage />} />
+          </Routes>
+        </Router>
+        <BottomSheet />
+      </Container>
     </LandingPageProvider>
   );
 }
+
+// function AppComponents() {
+//   return (
+
+//       <LandingPage />
+//       <BottomSheet />
+
+//   );
+// }
 
 export default App;

@@ -15,12 +15,10 @@ export const APP_NAME = "YTX";
 export const APP_COLOR_SELECTED = "#fff"
 
 export const PAGE_TEXT_SEARCH = 'SELECT';
-export const STYLE_MAIN_CONTAINER = {
-    padding: 10,
-    marging: 10,
+export const STYLE_MAIN_CONTAINER = {    
     display: 'flex',    
     flexDirection: 'column',
-    height: '100%',
+    height: '100vh',
     width: '400',
     backgroundColor: APP_COLOR_SELECTED
 }
